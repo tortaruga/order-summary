@@ -7,31 +7,53 @@
   <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
   
   <title>Frontend Mentor | Order summary card</title>
+  <link rel="stylesheet" href="./node_modules/bootstrap/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="./styles.css">
 
-  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
   <style>
-    .attribution { font-size: 11px; text-align: center; }
-    .attribution a { color: hsl(228, 45%, 44%); }
-  </style>
+    @import url('https://fonts.googleapis.com/css2?family=Red+Hat+Display:ital,wght@0,300..900;1,300..900&display=swap');
+    </style>
 </head>
-<body>
+<body class="p-3">
 
-  Order Summary
-
-  You can now listen to millions of songs, audiobooks, and podcasts on any 
-  device anywhere you like!
-
-  Annual Plan
-  $59.99/year
-
-  Change
-
-  Proceed to Payment
-  Cancel Order
+  <main>
+     <div class="card-component border-0 card mx-auto"> 
+      <img class="card-img-top w-100 rounded-top-4"     
+          src="./images/illustration-hero.svg"
+          alt="illustration of a woman listening to music"/> 
   
-  <div class="attribution">
-    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
-    Coded by <a href="#">Your Name Here</a>.
-  </div>
+      <div class="card-body text-center"> 
+        <h1 class="card-title title my-3">Order Summary</h1>
+        <p class="card-text description regular">You can now listen to millions of songs, audiobooks, and podcasts on any 
+          device anywhere you like!</p>
+ 
+        <div class="bg-light info-wrapper my-4 rounded-3 p-3 d-flex flex-row gap-3 align-items-center"> 
+          
+          <div class="group d-flex align-items-center gap-3">
+            <img src="./images/icon-music.svg" alt="music icon">
+          
+          <div class="plan-info d-flex flex-column justify-content-center" >
+            <h1 class="plan-title" >Annual Plan</h1> 
+            <p class="regular m-0">$59.99/year</p>
+          </div>     
+
+          </div>
+          
+          <a href="#" class="change-plan">Change</a>
+        </div>
+
+        <button class="btn rounded-3 proceed w-100">Proceed to Payment</button>
+        <button class="btn rounded-3 cancel w-100">Cancel Order</button>
+      </div> 
+     </div> 
+  </main>
+  
+  <footer class="p-5 text-center small">  
+    <div class="attribution">
+      Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+      Coded by <a href="https://www.frontendmentor.io/profile/tortaruga" target="_blank">tortaruga</a>.
+    </div> 
+  </footer>
+  <script src="./node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
 </body>
-</html>
+</html> 

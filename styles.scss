@@ -1,0 +1,143 @@
+@use 'sass:math';
+@import './node_modules/bootstrap/scss/bootstrap.scss';
+
+$bs-blue-200: hsl(225, 100%, 94%);
+$bs-blue-300: hsl(245, 75%, 52%);
+$bs-blue-100: hsl(225, 100%, 98%);
+$bs-blue-subtle: hsl(224, 23%, 55%);
+$bs-blue-400: hsl(223, 47%, 23%);
+
+@function px-to-rem($px, $base: 16) {
+    @return math.div($px, $base) * 1rem; 
+}
+
+@mixin flex($dir, $jus, $al) {
+    display: flex;
+    flex-direction: $dir;
+    justify-content: $jus; 
+    align-items: $al;
+} 
+
+@mixin regular() {
+    font-weight: 500; 
+    color: $bs-blue-subtle;
+    font-size: 1rem;
+}
+
+@mixin bolder($color, $size, $weight) {
+    font-size: $size;
+    color: $color; 
+    font-weight: $weight;
+}
+
+* { 
+    box-sizing: border-box;
+} 
+
+body {
+    background: url(./images/pattern-background-mobile.svg) $bs-blue-200;
+    background-repeat: no-repeat;  
+    background-position: 50% 0%;
+    background-size: cover;
+    font-family: 'red hat display', sans-serif; 
+    
+}  
+
+main {
+    min-height: 100vh;
+    @include flex(row, center, center); 
+} 
+
+.card-component.card {    
+    width: 100%;   
+    max-width: px-to-rem(360, );      
+    border-radius: 1rem;  
+    box-shadow: 3px 5px 20px rgba($color:  $bs-blue-subtle, $alpha: .3); 
+}  
+ 
+.regular {
+    @include regular(); 
+} 
+
+.title {
+    @include bolder($bs-blue-400, px-to-rem(26), 900);        
+}
+
+.info-wrapper {
+    justify-content: space-between;
+}
+
+.change-plan { 
+    @include bolder($bs-blue-300, px-to-rem(15), 800); 
+}
+ 
+.plan-title {
+    @include bolder($bs-blue-400, px-to-rem(15), 900);    
+    margin: 0; 
+}
+
+.proceed {
+    background-color: $bs-blue-300; 
+    @include bolder($bs-blue-100, 1rem, 800);
+    box-shadow: 3px 10px 20px rgba($color:  $bs-blue-300, $alpha: .3); 
+}
+ 
+.cancel { 
+    @include bolder($bs-blue-subtle, 1rem, 900);
+} 
+
+button.btn {  
+    font-family: inherit; 
+    padding-block: .75rem;  
+    margin-bottom: 1rem;   
+}
+
+.description, .info-wrapper, button.btn { 
+    max-width: 90%;      
+    margin-inline: auto;
+} 
+ 
+.change-plan:hover {
+    opacity: .5; 
+} 
+
+.proceed.btn:hover {
+    opacity: .5;
+    background-color: $bs-blue-300; 
+    color: $bs-blue-100; 
+}
+
+.cancel:hover {
+    color: $bs-blue-400;  
+}
+
+.attribution a {
+    color: $bs-blue-300;
+    font-weight: 800;  
+    text-decoration: none; 
+
+    &:hover {
+       color: $bs-blue-subtle; 
+    }
+}
+
+@media screen and (max-width: px-to-rem(375)) {
+    .info-wrapper, .group {
+        flex-wrap: wrap; 
+        justify-content: center;
+    } 
+}
+
+@media screen and (min-width: px-to-rem(700)) {
+    body {
+        background: url(./images/pattern-background-desktop.svg)  $bs-blue-200;
+        background-position: 50% 0%;
+        background-repeat: no-repeat;   
+    }
+} 
+
+@media screen and (min-width: px-to-rem(1450)) {
+    body {
+        background-size: cover; 
+    } 
+}
